@@ -10,16 +10,17 @@ function App() {
 
   const getTable = async () => {
     try {
-      socket.emit("subscribe", "goog,fb,appl,snap");
-      socket.on('connect', () => {
-        console.log("connectte");
-        
-      });
+      
+    const response = await fetch(url, {
+      mode:"no-cors"
+    })
 
-      socket.on("subscribe", () => {
-        console.log("cssssssssss")
-      })
+    const prueba = await response.json()
+
+     console.log(prueba);
+     
     } catch (error) {
+     console.log("error", error);
      
     }
 
